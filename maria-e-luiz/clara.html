@@ -22,7 +22,7 @@ a{color:inherit}
 
 /* HERO */
 .hero{position:relative;background:var(--dark);color:var(--on-dark);min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:28px 6vw;overflow:hidden}
-.hero .bgimg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(1);opacity:0;transition:opacity 1.2s}
+.hero .bgimg{position:absolute;inset:0;background-size:cover;background-position:50% 65%;filter:grayscale(1);opacity:0;transition:opacity 1.2s}
 .hero .bgimg.on{opacity:.16}
 .hero>*{position:relative}
 .bar{display:flex;justify-content:space-between;gap:12px;color:#444;font-size:.62rem}
@@ -50,7 +50,7 @@ a{color:inherit}
 .cover .ph .num{font-size:clamp(9rem,26vw,16rem);color:rgba(255,255,255,.07)}
 .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
 .cover:hover img{transform:scale(1.04)}
-.cover .split{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:4px}.cover .split img{position:static;width:100%;height:100%;object-fit:cover}
+.cover .split{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:4px}.cover .split .h{position:relative;overflow:hidden}.cover .split img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;transition:transform .3s}
 .cover:hover .play{transform:scale(1.08)}
 .play::after{content:"";border-style:solid;border-width:15px 0 15px 25px;border-color:transparent transparent transparent #141414;margin-left:6px}
@@ -124,16 +124,16 @@ a{color:inherit}
    capa: link direto da imagem (ou data:) — deixe "" enquanto não tiver */
 var ENTREGA = {
   data: "",            /* ex.: "08 · 11 · 2026" */
-  capaHero: "https://lh3.googleusercontent.com/d/1FRuKqcywTuQP7UTwmsAyxqd5KIMHFC6U=w1600",
-  faixa: ["https://lh3.googleusercontent.com/d/1c_jtXEIiFL7keLlxlP-mU-MA9DMNnRGy=w1600", "https://lh3.googleusercontent.com/d/1ic-H23gaompZdm8J6xirnFqar_tMirMu=w1600", "https://lh3.googleusercontent.com/d/1mgciOEmH-aE4FYrisEmRmd1dMZoRyfXY=w1600"],
+  capaHero: "https://lh3.googleusercontent.com/d/1RAAI18VLXxHkt00aBJVI2cxom7D358Ih=w1920",
+  faixa: ["https://lh3.googleusercontent.com/d/1c_jtXEIiFL7keLlxlP-mU-MA9DMNnRGy=w1600", "https://lh3.googleusercontent.com/d/12DbmrJA9bxPq_yVDq9fslQCcrxImHAoG=w1600", "https://lh3.googleusercontent.com/d/1mgciOEmH-aE4FYrisEmRmd1dMZoRyfXY=w1600"],
   filmes: [
     {titulo:"O Filme", tag:"Filme completo", id:"1pPjQKYA08PdakRVDKrSQEt2k3gsXkeR2", capa:"https://lh3.googleusercontent.com/d/1VGlxPDK7JCfS3WuO8QTAsT-iIj38JqH5=w1600",
      texto:"O dia inteiro, do primeiro preparo ao último brinde, contado como a história que ele foi."},
-    {titulo:"Same Day", tag:"Editado no dia", id:"1Sgbie1XmHcAZR5Vd7nHwDPZGQ3MLeprZ", capa:"https://lh3.googleusercontent.com/d/1Ou9thC0gYvJX5FGa1yuF3sjcrNrAF_TQ=w1600",
+    {titulo:"Same Day", tag:"Editado no dia", id:"1Sgbie1XmHcAZR5Vd7nHwDPZGQ3MLeprZ", capa:"https://lh3.googleusercontent.com/d/1ic-H23gaompZdm8J6xirnFqar_tMirMu=w1600", brilho:1.3,
      texto:"O filme que nasceu durante a festa e fez todo mundo se emocionar antes mesmo da noite acabar."},
     {titulo:"Love Story", tag:"Antes do grande dia", id:"1IOPFRoeapi-NxHfIq7KfoZf5Drp5D7oX", capa:"https://lh3.googleusercontent.com/d/1OT_hYjxj1-n0TL9OptRRv8q7qKkOUYm9=w1600",
      texto:"Quem vocês são juntos, contado com calma — o caminho que trouxe vocês até o altar."},
-    {titulo:"Making Of", tag:"Os preparativos", id:"19KT6YAOgE_1gIjzEDboVRO7c8fWK4-Ep", capa:["https://lh3.googleusercontent.com/d/1vpGngtl3Bd6VGTwLXO5iA0S8kxdKUmKm=w1600","https://lh3.googleusercontent.com/d/12K4pHHhw1W0JVEYRhwfzHRKdecccppRS=w1600"],
+    {titulo:"Making Of", tag:"Os preparativos", id:"19KT6YAOgE_1gIjzEDboVRO7c8fWK4-Ep", zoom:[1.7,1], foco:["42% 30%","55% 35%"], capa:["https://lh3.googleusercontent.com/d/1vpGngtl3Bd6VGTwLXO5iA0S8kxdKUmKm=w1600","https://lh3.googleusercontent.com/d/12K4pHHhw1W0JVEYRhwfzHRKdecccppRS=w1600"],
      texto:"A ansiedade boa, os detalhes, os últimos minutos antes de tudo começar."},
     {titulo:"Balada", tag:"A festa", id:"1EcUAn9fsT0R5w4HHAtWyH6oadKfTYgrY", capa:"https://lh3.googleusercontent.com/d/1GnGa5d2RGwEkcA5hiXca9VpPGNjtTFkK=w1600",
      texto:"A pista cheia, os amigos, a energia de uma noite que ninguém quis que terminasse."}
@@ -154,7 +154,7 @@ var ENTREGA = {
     html+='<article class="film rv">'+
       '<a class="cover" href="'+url+'" target="_blank" rel="noopener" aria-label="Assistir '+esc(f.titulo)+'">'+
         '<div class="ph"><span class="num cmp">'+n+'</span></div>'+
-        (Array.isArray(f.capa)?'<div class="split"><img src="'+esc(f.capa[0])+'" alt="" loading="lazy"><img src="'+esc(f.capa[1])+'" alt="" loading="lazy"></div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy">':''))+
+        (Array.isArray(f.capa)?'<div class="split">'+f.capa.map(function(c,k){var z=(f.zoom||[])[k]||1,o=(f.foco||[])[k]||'50% 50%';return '<div class="h"><img src="'+esc(c)+'" alt="" loading="lazy" style="object-position:'+o+';transform:scale('+z+');transform-origin:'+o+'"></div>'}).join('')+'</div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy"'+(f.brilho?' style="filter:brightness('+f.brilho+')"':'')+'>':''))+
         '<span class="play"></span></a>'+
       '<div class="info"><span class="sp">'+n+' · '+esc(f.tag)+'</span>'+
         '<h3 class="cmp">'+esc(f.titulo)+'</h3><p>'+esc(f.texto)+'</p>'+
