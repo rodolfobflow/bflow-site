@@ -53,9 +53,9 @@ a{color:inherit}
 .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
 .cover:hover img{transform:scale(1.04)}
 .cover .split{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:4px}.cover .split .h{position:relative;overflow:hidden}.cover .split img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.play{position:absolute;left:12px;bottom:12px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.45);border:1.5px solid rgba(255,255,255,.85);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;transition:transform .3s}
 .cover:hover .play{transform:scale(1.08)}
-.play::after{content:"";border-style:solid;border-width:15px 0 15px 25px;border-color:transparent transparent transparent #141414;margin-left:6px}
+.play::after{content:"";border-style:solid;border-width:5px 0 5px 9px;border-color:transparent transparent transparent #fff;margin-left:2px}
 .info{background:var(--panel);padding:56px 6vw;display:flex;flex-direction:column;justify-content:center}
 .info .sp{color:var(--soft)}
 .info h3{font-size:clamp(3.6rem,10vw,7.2rem);margin:14px 0 18px}
@@ -176,7 +176,8 @@ var ENTREGA = {
    "tag": "O sim",
    "texto": "Cada palavra, cada olhar e cada lágrima do momento em que vocês disseram sim.",
    "id": "1DPpAVUDBWXgghEq0tUuWD2w6YxsM3-jU",
-   "capa": "https://lh3.googleusercontent.com/d/1iY4iQtZDLq9Pqc7crwsiYxN5oDl2Cdty=w1600"
+   "capa": "https://lh3.googleusercontent.com/d/1iY4iQtZDLq9Pqc7crwsiYxN5oDl2Cdty=w1600",
+   "pb": true
   },
   {
    "titulo": "Balada",
@@ -203,7 +204,7 @@ var ENTREGA = {
     html+='<article class="film rv">'+
       '<a class="cover" href="'+url+'" target="_blank" rel="noopener" aria-label="Assistir '+esc(f.titulo)+'">'+
         '<div class="ph"><span class="num cmp">'+n+'</span></div>'+
-        (Array.isArray(f.capa)?'<div class="split">'+f.capa.map(function(c,k){var z=(f.zoom||[])[k]||1,o=(f.foco||[])[k]||'50% 50%';return '<div class="h"><img src="'+esc(c)+'" alt="" loading="lazy" style="object-position:'+o+';transform:scale('+z+');transform-origin:'+o+'"></div>'}).join('')+'</div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy" style="'+(f.brilho?'filter:brightness('+f.brilho+');':'')+(typeof f.foco==='string'?'object-position:'+f.foco+';':'')+(f.inteira?'object-fit:contain;background:#0b0b0b;':'')+'">':''))+
+        (Array.isArray(f.capa)?'<div class="split">'+f.capa.map(function(c,k){var z=(f.zoom||[])[k]||1,o=(f.foco||[])[k]||'50% 50%';return '<div class="h"><img src="'+esc(c)+'" alt="" loading="lazy" style="object-position:'+o+';transform:scale('+z+');transform-origin:'+o+'"></div>'}).join('')+'</div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy" style="'+(f.brilho||f.pb?'filter:'+(f.pb?'grayscale(1) ':'')+(f.brilho?'brightness('+f.brilho+')':'')+';':'')+(typeof f.foco==='string'?'object-position:'+f.foco+';':'')+(f.inteira?'object-fit:contain;background:#0b0b0b;':'')+'">':''))+
         '<span class="play"></span></a>'+
       '<div class="info"><span class="sp">'+n+' · '+esc(f.tag)+'</span>'+
         '<h3 class="cmp">'+esc(f.titulo)+'</h3><p>'+esc(f.texto)+'</p>'+
