@@ -22,7 +22,7 @@ a{color:inherit}
 
 /* HERO */
 .hero{position:relative;background:var(--dark);color:var(--on-dark);min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:28px 6vw;overflow:hidden}
-.hero .bgimg{position:absolute;left:0;right:0;top:-41%;height:140%;background-size:cover;background-position:47% 47%;filter:grayscale(1) brightness(.45);opacity:0;transition:opacity 1.2s}
+.hero .bgimg{position:absolute;left:0;right:0;top:-41%;height:140%;background-size:cover;background-position:64% 45%;filter:grayscale(1) brightness(.45);opacity:0;transition:opacity 1.2s}
 .hero .bgimg.on{opacity:1}
 .hero>*{position:relative}
 .bar{display:flex;justify-content:space-between;gap:12px;color:#cfcfcf;font-size:.62rem}
@@ -137,7 +137,8 @@ var ENTREGA = {
    "tag": "O ensaio",
    "texto": "Um dia só de vocês dois, antes de toda a correria: leve, sincero e cheio de cumplicidade.",
    "id": "1yhHJw1ojAMdNv2OJAvx0I45No6UNKmWW",
-   "capa": "https://lh3.googleusercontent.com/d/1Jqv8LtRos_EVbMAujPjyopwnjnHjfBxN=w1600"
+   "capa": "https://lh3.googleusercontent.com/d/1Jqv8LtRos_EVbMAujPjyopwnjnHjfBxN=w1600",
+   "foco": "40% 50%"
   },
   {
    "titulo": "Trailer",
@@ -153,15 +154,15 @@ var ENTREGA = {
    "id": "1UrsFVj_FXEEmqmtCaxGpefR2F1DB75Dv",
    "capa": [
     "https://lh3.googleusercontent.com/d/1bpFc-YN_vto38CpgJBybebOAaQt95dMF=w1600",
-    "https://lh3.googleusercontent.com/d/1LPucVG8WacVHO7LXijI77eVee_ltkn4c=w1600"
+    "https://lh3.googleusercontent.com/d/1BDr2GE7wiKhYegDTAJVfBPfYOSuLxxo9=w1600"
    ],
    "zoom": [
     1.3,
-    1
+    1.2
    ],
    "foco": [
-    "52% 35%",
-    "45% 35%"
+    "64% 35%",
+    "46% 42%"
    ]
   },
   {
@@ -196,7 +197,7 @@ var ENTREGA = {
     html+='<article class="film rv">'+
       '<a class="cover" href="'+url+'" target="_blank" rel="noopener" aria-label="Assistir '+esc(f.titulo)+'">'+
         '<div class="ph"><span class="num cmp">'+n+'</span></div>'+
-        (Array.isArray(f.capa)?'<div class="split">'+f.capa.map(function(c,k){var z=(f.zoom||[])[k]||1,o=(f.foco||[])[k]||'50% 50%';return '<div class="h"><img src="'+esc(c)+'" alt="" loading="lazy" style="object-position:'+o+';transform:scale('+z+');transform-origin:'+o+'"></div>'}).join('')+'</div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy"'+(f.brilho?' style="filter:brightness('+f.brilho+')"':'')+'>':''))+
+        (Array.isArray(f.capa)?'<div class="split">'+f.capa.map(function(c,k){var z=(f.zoom||[])[k]||1,o=(f.foco||[])[k]||'50% 50%';return '<div class="h"><img src="'+esc(c)+'" alt="" loading="lazy" style="object-position:'+o+';transform:scale('+z+');transform-origin:'+o+'"></div>'}).join('')+'</div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy" style="'+(f.brilho?'filter:brightness('+f.brilho+');':'')+(typeof f.foco==='string'?'object-position:'+f.foco+';':'')+'">':''))+
         '<span class="play"></span></a>'+
       '<div class="info"><span class="sp">'+n+' · '+esc(f.tag)+'</span>'+
         '<h3 class="cmp">'+esc(f.titulo)+'</h3><p>'+esc(f.texto)+'</p>'+
