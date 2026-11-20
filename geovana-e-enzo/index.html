@@ -137,7 +137,8 @@ var ENTREGA = {
    "tag": "Exibido na festa",
    "texto": "Editado durante o casamento e exibido ainda na festa: um momento único, que não se repete, de pura euforia entre vocês e os convidados.",
    "id": "1rtOfeCHieY0jWr2-OCESwirJANxtghiS",
-   "capa": "https://lh3.googleusercontent.com/d/1reUYbYeh9zwrqfMEyW6L9w3NatUBf7n9=w1600"
+   "capa": "https://lh3.googleusercontent.com/d/1reUYbYeh9zwrqfMEyW6L9w3NatUBf7n9=w1600",
+   "foco": "38% 50%"
   },
   {
    "titulo": "Making Of",
@@ -162,15 +163,14 @@ var ENTREGA = {
    "tag": "O sim",
    "texto": "Cada palavra, cada olhar e cada lágrima do momento em que vocês disseram sim.",
    "id": "1MS0XxitG3Wkr-BoBWNEnioH7qKl2ahZ3",
-   "capa": "https://lh3.googleusercontent.com/d/1YDJJfy9amUpftl7HjbuhflIcyKQCIncR=w1600"
+   "capa": "https://lh3.googleusercontent.com/d/1iuR6Mref7zCCV5usGoWrdG-KDSBXuLOk=w1600"
   },
   {
    "titulo": "Balada",
    "tag": "Recepção e festa",
    "texto": "Da recepção ao último minuto da pista: a família, os amigos e a energia de uma noite que ninguém quis que terminasse.",
    "id": "1ZPZdz3XMYwCbB8GsTYI0h945EqdEnoMb",
-   "capa": "https://lh3.googleusercontent.com/d/12_313m24TnEd_K6Rn4Qb-yyZFs7_Lrdr=w1600",
-   "brilho": 1.3
+   "capa": "https://lh3.googleusercontent.com/d/18QfUwkCMzOyl72Z-16hJhFQR_38ZGzeX=w1600"
   }
  ]
 };
@@ -189,7 +189,7 @@ var ENTREGA = {
     html+='<article class="film rv">'+
       '<a class="cover" href="'+url+'" target="_blank" rel="noopener" aria-label="Assistir '+esc(f.titulo)+'">'+
         '<div class="ph"><span class="num cmp">'+n+'</span></div>'+
-        (Array.isArray(f.capa)?'<div class="split">'+f.capa.map(function(c,k){var z=(f.zoom||[])[k]||1,o=(f.foco||[])[k]||'50% 50%';return '<div class="h"><img src="'+esc(c)+'" alt="" loading="lazy" style="object-position:'+o+';transform:scale('+z+');transform-origin:'+o+'"></div>'}).join('')+'</div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy"'+(f.brilho?' style="filter:brightness('+f.brilho+')"':'')+'>':''))+
+        (Array.isArray(f.capa)?'<div class="split">'+f.capa.map(function(c,k){var z=(f.zoom||[])[k]||1,o=(f.foco||[])[k]||'50% 50%';return '<div class="h"><img src="'+esc(c)+'" alt="" loading="lazy" style="object-position:'+o+';transform:scale('+z+');transform-origin:'+o+'"></div>'}).join('')+'</div>':(f.capa?'<img src="'+esc(f.capa)+'" alt="" loading="lazy" style="'+(f.brilho?'filter:brightness('+f.brilho+');':'')+(typeof f.foco==='string'?'object-position:'+f.foco+';':'')+'">':''))+
         '<span class="play"></span></a>'+
       '<div class="info"><span class="sp">'+n+' · '+esc(f.tag)+'</span>'+
         '<h3 class="cmp">'+esc(f.titulo)+'</h3><p>'+esc(f.texto)+'</p>'+
